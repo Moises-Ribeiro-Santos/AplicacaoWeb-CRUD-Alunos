@@ -1,6 +1,6 @@
-# Trabalho Final - Frontend React CRUD Produtos
+# Trabalho Final - Frontend React CRUD Alunos
 
-Este projeto é um frontend em React (Vite) que realiza operações de CRUD (Create, Read, Update, Delete) para produtos, utilizando a API pública disponível em [http://leoproti.com.br:8004/alunos](http://leoproti.com.br:8004/alunos).
+Este projeto é um frontend em React (Vite) que realiza operações de CRUD (Create, Read, Update, Delete) para alunos, utilizando a API pública disponível em [http://leoproti.com.br:8004/alunos](http://leoproti.com.br:8004/alunos).
 
 ## Funcionalidades
 
