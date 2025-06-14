@@ -17,7 +17,7 @@ Este projeto é um frontend em React (Vite) que realiza operações de CRUD (Cre
 {
   "id": 0,
   "nome": "string",
-  "preco": 0
+  "turma": "string"
 }
 ```
 
