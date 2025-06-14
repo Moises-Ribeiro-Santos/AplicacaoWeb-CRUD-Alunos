@@ -1,13 +1,13 @@
 # Trabalho Final - Frontend React CRUD Produtos
 
-Este projeto é um frontend em React (Vite) que realiza operações de CRUD (Create, Read, Update, Delete) para produtos, utilizando a API pública disponível em [http://leoproti.com.br:8004/produtos](http://leoproti.com.br:8004/produtos).
+Este projeto é um frontend em React (Vite) que realiza operações de CRUD (Create, Read, Update, Delete) para produtos, utilizando a API pública disponível em [http://leoproti.com.br:8004/alunos](http://leoproti.com.br:8004/alunos).
 
 ## Funcionalidades
 
-- Listagem de produtos
-- Cadastro de novo produto
-- Edição de produto existente
-- Exclusão de produto
+- Listagem de alunos
+- Cadastro de novo aluno
+- Edição de aluno existente
+- Exclusão de aluno
 - Interface moderna com Material-UI
 - Controle de rotas com React Router
 
@@ -62,24 +62,24 @@ Acesse [http://localhost:5173](http://localhost:5173) no navegador.
 
 ## Rotas da Aplicação
 
-- `/` — Lista todos os produtos
-- `/novo` — Formulário para cadastrar novo produto
-- `/editar/:id` — Formulário para editar produto existente
+- `/` — Lista todos os alunos
+- `/novo` — Formulário para cadastrar novo aluno
+- `/editar/:id` — Formulário para editar aluno existente
 
 ## Exemplo de Requisição para a API
 
 ```js
-// GET todos os produtos
-axios.get("http://leoproti.com.br:8004/produtos")
+// GET todos os alunos
+axios.get("http://leoproti.com.br:8004/alunos")
 
-// POST novo produto
-axios.post("http://leoproti.com.br:8004/produtos", { nome: "Produto", preco: 10 })
+// POST novo aluno
+axios.post("http://leoproti.com.br:8004/alunos", { nome: "Aluno", turma: "G.9.PW.4DA" })
 
-// PUT atualizar produto
-axios.put("http://leoproti.com.br:8004/produtos/1", { nome: "Produto Atualizado", preco: 20 })
+// PUT atualizar aluno
+axios.put("http://leoproti.com.br:8004/alunos/1", { nome: "Aluno Atualizado", turma: "G.9.PW.4DA" })
 
-// DELETE remover produto
-axios.delete("http://leoproti.com.br:8004/produtos/1")
+// DELETE remover aluno
+axios.delete("http://leoproti.com.br:8004/alunos/1")
 ```
 
 ## Solução de Problemas de Dependências
