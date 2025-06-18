@@ -31,7 +31,7 @@ export default function Alunos() {
         style: "destructive",
         onPress: async () => {
           await alunoService.excluir(id);
-          router.replace("/alunos/index");
+          router.replace("/alunos");
         },
       },
     ]);
@@ -54,7 +54,7 @@ export default function Alunos() {
             <Card.Actions>
               <Button
                 mode="outlined"
-                onPress={() => router.replace(`/alunos/[id]`)}
+                onPress={() => router.replace(`/alunos/${item.id}`)}
                 style={{ marginRight: 8 }}
               >
                 Editar
@@ -84,7 +84,7 @@ export default function Alunos() {
           backgroundColor: "#1976d2",
           pointerEvents: "auto",
         }}
-        onPress={() => router.replace("/alunos/novo")}
+        onPress={() => router.replace("/alunos")}
         color="#fff"
       />
     </View>

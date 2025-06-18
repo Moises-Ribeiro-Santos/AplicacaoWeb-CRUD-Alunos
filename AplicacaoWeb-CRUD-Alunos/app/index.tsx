@@ -55,7 +55,7 @@ export default function Index() {
         </Text>
         <Button
           mode="contained"
-          onPress={() => router.push("/alunos/index")}
+          onPress={() => router.push("/alunos")}
           style={{
             backgroundColor: "#1976d2",
             borderRadius: 8,

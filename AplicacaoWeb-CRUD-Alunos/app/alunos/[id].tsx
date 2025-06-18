@@ -15,39 +15,55 @@ export default function EditarAluno() {
     if (id) {
       setLoading(true);
       alunoService.obter(Number(id)).then((data) => {
-        setAluno({ nome: data.nome, turma: data.turma, curso: data.curso, matricula: data.matricula });
+        setAluno(data); 
         setLoading(false);
+      }).catch((error) => {
+        console.error("Erro ao carregar aluno:", error);
+        setLoading(false);
+
+        alert("Erro ao carregar os dados do aluno.");
       });
     }
   }, [id]);
 
-    const handleSubmit = async (data?: any) => {
-    const nome = data?.nome ?? aluno.nome;
-    const turma = data?.turma ?? aluno.turma;
-    const curso = data?.curso ?? aluno.curso;
-    const matricula = data?.matricula ?? aluno.matricula;
 
-    if (!nome || !turma || !curso || !matricula) {
+  const handleChange = (name: keyof Aluno, value: string) => {
+    setAluno((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (data?: Aluno) => {
+
+    const alunoToUpdate: Aluno = {
+      nome: data?.nome ?? aluno.nome,
+      turma: data?.turma ?? aluno.turma,
+      curso: data?.curso ?? aluno.curso,
+      matricula: data?.matricula ?? aluno.matricula,
+      id: aluno.id 
+    };
+
+    if (!alunoToUpdate.nome || !alunoToUpdate.turma || !alunoToUpdate.curso || !alunoToUpdate.matricula) {
       alert("Preencha todos os campos!");
       return;
     }
 
     setLoading(true);
     try {
-      await alunoService.atualizar(Number(id), { nome, turma, curso, matricula });
-      router.replace("/alunos/index");
+
+      await alunoService.atualizar(Number(id), alunoToUpdate); 
+      router.replace("/alunos"); 
+    } catch (error) {
+      console.error("Erro ao atualizar aluno:", error);
+      alert("Erro ao salvar as alterações do aluno."); 
     } finally {
       setLoading(false);
     }
   };
 
-
-
-  if (loading)
+  if (loading) {
     return <ActivityIndicator size="large" style={{ marginTop: 40 }} />;
-
-  function handleChange(name: keyof Aluno, value: string): void {
-    throw new Error("Function not implemented.");
   }
 
   return (
@@ -56,18 +72,18 @@ export default function EditarAluno() {
         variant="titleLarge"
         style={{ textAlign: "center", marginBottom: 20 }}
       >
-        Editar Produto
+        Editar Aluno 
       </Text>
       <FormAluno
         aluno={aluno}
         loading={loading}
-        onChange={handleChange}
+        onChange={handleChange} 
         onSubmit={handleSubmit}
         onCancel={() => {
           if (router.canGoBack?.()) {
             router.back();
           } else {
-            router.replace("/alunos/index");
+            router.replace("/alunos"); 
           }
         }}
       />

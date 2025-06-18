@@ -36,7 +36,7 @@ export default function NovoAluno() {
     setLoading(true);
     try {
       await alunoService.criar({ nome, turma, curso, matricula });
-      router.replace("/alunos/index");
+      router.replace("/alunos");
     } finally {
       setLoading(false);
     }
@@ -59,7 +59,7 @@ export default function NovoAluno() {
           if (router.canGoBack?.()) {
             router.back();
           } else {
-            router.replace("/alunos/index");
+            router.replace("/alunos");
           }
         }}
       />

@@ -4,8 +4,8 @@ export interface Aluno {
   id?: number;
   nome: string;
   turma: string;
-  curso: String;
-  matricula: String;
+  curso: string;
+  matricula: string;
 }
 
 const API_URL = "http://leoproti.com.br:8004/alunos";
