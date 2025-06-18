@@ -24,7 +24,23 @@ export default function FormAluno({
           label="Turma"
           name="turma"
           type="text"
-          value={aluno.preco}
+          value={aluno.turma}
+          onChange={onChange}
+          required
+        />
+        <TextField
+          label="Curso"
+          name="curso"
+          type="text"
+          value={aluno.curso}
+          onChange={onChange}
+          required
+        />
+        <TextField
+          label="Matricula"
+          name="matricula"
+          type="text"
+          value={aluno.matricula}
           onChange={onChange}
           required
         />

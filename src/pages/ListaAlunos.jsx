@@ -68,6 +68,8 @@ export default function ListaAlunos() {
             <TableCell>ID</TableCell>
             <TableCell>Nome</TableCell>
             <TableCell>Turma</TableCell>
+            <TableCell>Curso</TableCell>
+            <TableCell>Matrícula</TableCell>
             <TableCell align="right">Ações</TableCell>
           </TableRow>
         </TableHead>
@@ -77,6 +79,8 @@ export default function ListaAlunos() {
               <TableCell>{aluno.id}</TableCell>
               <TableCell>{aluno.nome}</TableCell>
               <TableCell>{aluno.turma}</TableCell>
+              <TableCell>{aluno.curso}</TableCell>
+              <TableCell>{aluno.matricula}</TableCell>
               <TableCell align="right">
                 <IconButton
                   color="primary"

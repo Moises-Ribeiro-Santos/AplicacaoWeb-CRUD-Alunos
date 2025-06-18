@@ -13,7 +13,11 @@ const obter = async (id) => {
 };
 
 const criar = async (aluno) => {
-  const { data } = await axios.post(API_URL, aluno);
+  const { data } = await axios.post(API_URL, aluno, {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
   return data;
 };
 

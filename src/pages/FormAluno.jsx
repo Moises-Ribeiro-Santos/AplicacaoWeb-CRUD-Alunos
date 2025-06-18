@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Paper, Typography } from "@mui/material";
-import produtoService from "../services/alunoService";
+import alunoService from "../services/alunoService";
 import FormAluno from "../components/FormAluno";
 
 export default function FormAlunoPage() {
   const { id } = useParams();
-  const [aluno, setAluno] = useState({ nome: "", turma: "" });
+  const [aluno, setAluno] = useState({ nome: "", turma: "", curso: "", marticula: "" });
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -14,7 +14,7 @@ export default function FormAlunoPage() {
     if (id) {
       setLoading(true);
       alunoService.obter(id).then((data) => {
-        setAluno({ nome: data.nome, turma: data.turma });
+        setAluno({ nome: data.nome, turma: data.turma, curso: data.curso, matricula: data.matricula });
         setLoading(false);
       });
     }
@@ -35,11 +35,15 @@ export default function FormAlunoPage() {
       await alunoService.atualizar(id, {
         nome: aluno.nome,
         turma: aluno.turma,
+        curso: aluno.curso,
+        matricula: aluno.marticula,
       });
     } else {
       await alunoService.criar({
         nome: aluno.nome,
         turma: aluno.turma,
+        curso: aluno.curso,
+        matricula: aluno.marticula,
       });
     }
     setLoading(false);
