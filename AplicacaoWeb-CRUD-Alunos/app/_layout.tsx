@@ -33,6 +33,9 @@ export default function RootLayout() {
           contentStyle: { backgroundColor: "#f5fafd" },
         }}
       >
+        <Stack.Screen 
+          name="index" options={{ title: "Início" }} 
+        />
         <Stack.Screen
           name="alunos/index"
           options={{ title: "Lista de Alunos" }}

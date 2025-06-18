@@ -21,12 +21,20 @@ const obter = async (id: number): Promise<Aluno> => {
 };
 
 const criar = async (aluno: Aluno): Promise<Aluno> => {
-  const { data } = await axios.post(API_URL, aluno);
+  const { data } = await axios.post(API_URL, aluno, {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
   return data;
 };
 
 const atualizar = async (id: number, aluno: Aluno): Promise<Aluno> => {
-  const { data } = await axios.put(`${API_URL}/${id}`, aluno);
+  const { data } = await axios.put(`${API_URL}/${id}`, aluno, {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
   return data;
 };
 

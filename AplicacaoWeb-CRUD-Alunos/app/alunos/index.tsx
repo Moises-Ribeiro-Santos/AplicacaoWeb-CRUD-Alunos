@@ -84,7 +84,7 @@ export default function Alunos() {
           backgroundColor: "#1976d2",
           pointerEvents: "auto",
         }}
-        onPress={() => router.replace("/alunos")}
+        onPress={() => router.replace("/alunos/novo")}
         color="#fff"
       />
     </View>
