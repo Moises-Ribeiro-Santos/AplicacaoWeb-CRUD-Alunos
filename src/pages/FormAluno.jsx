@@ -36,14 +36,14 @@ export default function FormAlunoPage() {
         nome: aluno.nome,
         turma: aluno.turma,
         curso: aluno.curso,
-        matricula: aluno.marticula,
+        matricula: aluno.matricula,
       });
     } else {
       await alunoService.criar({
         nome: aluno.nome,
         turma: aluno.turma,
         curso: aluno.curso,
-        matricula: aluno.marticula,
+        matricula: aluno.matricula,
       });
     }
     setLoading(false);

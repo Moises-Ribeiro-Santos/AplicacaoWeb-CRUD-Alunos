@@ -99,7 +99,7 @@ export default function ListaAlunos() {
           ))}
           {alunos.length === 0 && (
             <TableRow>
-              <TableCell colSpan={4} align="center">
+              <TableCell colSpan={6} align="center">
                 Nenhum aluno cadastrado.
               </TableCell>
             </TableRow>
